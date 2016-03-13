@@ -61,36 +61,6 @@ import java.util.Set;
          }
      }
  
-     /*private void read(SelectionKey key) throws IOException {
-         SocketChannel socketChannel = (SocketChannel) key.channel();
-         this.readBuffer.clear();
-         int readNum = 0;
-        try {
-             readNum = socketChannel.read(this.readBuffer);
-         } catch (IOException e) {
-             key.cancel();
-             socketChannel.close();
-             return;
-         }
-         if (readNum > 0) {
-             byte[] newBytes = new byte[readNum];
-             System.arraycopy(readBuffer.array(), 0, newBytes, 0, readNum);
-             String message = new String(newBytes);
-             System.out.println(message);
-            message = "你好，已收到你发的消息：" + message;
-             readBuffer.flip();
-             readBuffer = ByteBuffer.wrap(message.getBytes());
-             socketChannel.write(readBuffer);
-         }
-     }
- 
-     private void accept(SelectionKey key) throws IOException {
-         ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
-         SocketChannel clientChanel = ssc.accept();
-         clientChanel.configureBlocking(false);
-         clientChanel.register(selector, SelectionKey.OP_READ);
-         System.out.println("a new client connected...");
-     }*/
  
      public static void main(String[] args) throws IOException {
          new Server().start();
