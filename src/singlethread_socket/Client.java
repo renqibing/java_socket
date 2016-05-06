@@ -13,7 +13,7 @@ public class Client {
         //客户端请求与本机在20011端口建立TCP连接 
         client.setSoTimeout(10000);             
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in)); 
-      //获取键盘输入        
+      //获取键盘输入 ,即客户端输入       
         PrintStream out = new PrintStream(client.getOutputStream());          
         //获取Socket的输出流，用来发送数据到服务端                  
         BufferedReader buf =  new BufferedReader(new InputStreamReader(client.getInputStream()));  
